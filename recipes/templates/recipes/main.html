@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipes - List</title>
+</head>
+
+<body>
+  <h1>Recipes' list</h1>
+
+  <table cellpadding="5" cellspacing="5">
+    <tr>
+      <td>Recipes Names</td>
+      <td>Image</td>
+    </tr>
+    {% for object in object_list %}
+    <tr>
+      <td><a href="{{object.get_absolute_url}}">
+          {{object.name}}
+        </a>
+      </td>
+      <td><img src="{{object.pic.url}}" width="150" height="200" /></td>
+    </tr>
+    {% endfor %}
+  </table>
+
+</body>
+
+</html>
