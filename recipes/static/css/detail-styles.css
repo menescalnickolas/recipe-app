@@ -1,0 +1,94 @@
+/* General body styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Recipe details page container */
+.recipe-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  max-width: 1500px;
+  margin: 0 auto;
+  flex-grow: 1;
+  position: relative;
+}
+
+/* Title styles */
+.recipe-title {
+  font-size: 3rem;
+  font-family: 'Verdana', Geneva, sans-serif;
+  color: #007bff;
+  ;
+}
+
+/* Subtitle (cooking time and difficulty) styles */
+.recipe-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Recipe image styles */
+.recipe-image {
+  width: auto;
+  height: 400px;
+  border-radius: 10px;
+}
+
+/* Section title styles (e.g., Description, Ingredients) */
+.section-title {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  width: 100%;
+  padding-left: 20px;
+}
+
+/* Paragraphs for description, ingredients, and preparation */
+.recipe-description,
+.recipe-ingredients,
+.recipe-preparation {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  max-width: 900px;
+  text-align: left;
+  word-wrap: break-word;
+}
+
+/* Link button for navigation */
+.back-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.back-button:active {
+  background-color: #004085;
+}

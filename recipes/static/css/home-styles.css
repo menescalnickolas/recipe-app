@@ -1,0 +1,68 @@
+/* General body styles */
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+/* Home container styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title styles */
+h1 {
+  font-family: 'Verdana', Geneva, sans-serif;
+  font-size: 3rem;
+  color: #0675b5;
+  margin-bottom: 30px;
+}
+
+/* Image container styles */
+.image-container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 800px; 
+  margin-bottom: 30px;
+}
+
+.home-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Button container and styles */
+.button-container {
+  display: flex;               
+  justify-content: center;    
+  align-items: center;         
+  margin-top: 30px;   
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  background-color: #004085;
+}

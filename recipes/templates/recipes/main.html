@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,26 +6,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipes - List</title>
+  <link rel="stylesheet" href="{% static 'css/main-styles.css' %}">
 </head>
 
 <body>
   <h1>Recipes' list</h1>
 
-  <table cellpadding="5" cellspacing="5">
-    <tr>
-      <td>Recipes Names</td>
-      <td>Image</td>
-    </tr>
+  <div class="recipes-container">
     {% for object in object_list %}
-    <tr>
-      <td><a href="{{object.get_absolute_url}}">
-          {{object.name}}
+      <div class="recipe-item">
+        <a href="{{ object.get_absolute_url }}">
+          <img src="{{ object.pic.url }}" alt="{{ object.name }}" class="recipe-img">
+          <p>{{ object.name }}</p>
         </a>
-      </td>
-      <td><img src="{{object.pic.url}}" width="150" height="200" /></td>
-    </tr>
+      </div>
     {% endfor %}
-  </table>
+  </div>
 
 </body>
 
