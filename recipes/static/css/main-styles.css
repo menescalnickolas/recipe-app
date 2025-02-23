@@ -10,8 +10,16 @@
     h1 {
       font-family: 'Verdana', Geneva, sans-serif;
       font-size: 3rem;
-      color: #0675b5;
+      color: #000000;
       margin-bottom: 30px;
+    }
+
+    .btn {
+      position: fixed;
+      align-items: end;
+      border: red;
+      background-color: #f8f9fa;
+      color: red;
     }
 
     .recipes-container {
