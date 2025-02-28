@@ -23,6 +23,8 @@ class RecipesListView(LoginRequiredMixin, ListView):
     self.recipes_df = None  # Initialize empty data for template
     self.chart = None
 
+    self.chart = get_chart('#2', queryset)
+    
     if self.request.GET and self.form.is_valid():
       search_query = self.request.GET.get('search_query', '')
       chart_type = self.request.GET.get('chart_type', '')
@@ -62,7 +64,7 @@ class RecipesListView(LoginRequiredMixin, ListView):
                 )
       
       
-      self.chart = get_chart(chart_type, queryset, labels=[r.name for r in queryset])
+      
 
       if queryset.exists():
         self.recipes_df = pd.DataFrame(queryset.values()).to_html()
