@@ -40,6 +40,11 @@
       text-decoration: underline;
     }
 
+    .search_form {
+      margin: 100px;
+      border: red;
+    }
+
     /* Image Styling */
     .recipe-img {
       width: 200px;

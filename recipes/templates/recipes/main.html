@@ -10,23 +10,47 @@
 </head>
 
 <body>
+
+
+
+  <div class="search_form">
+    <form action="" method="GET">  {# Use GET so the search persists in the URL #}
+      {% csrf_token %}
   
-  <a href ="{%url 'logout' %}" class="btn"> Logout </a>
+      <label for="id_recipe_name">Recipe Name:</label>
+      {{ form.recipe_name }}
   
+      <label for="id_chart_type">Chart Type:</label>
+      {{ form.chart_type }}
+  
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+
   <h1>RECIPES</h1>
 
-  
+
 
   <div class="recipes-container">
     {% for object in object_list %}
-      <div class="recipe-item">
-        <a href="{{ object.get_absolute_url }}">
-          <img src="{{ object.pic.url }}" alt="{{ object.name }}" class="recipe-img">
-          <p>{{ object.name }}</p>
-        </a>
-      </div>
+    <div class="recipe-item">
+      <a href="{{ object.get_absolute_url }}">
+        <img src="{{ object.pic.url }}" alt="{{ object.name }}" class="recipe-img">
+        <p>{{ object.name }}</p>
+      </a>
+    </div>
     {% endfor %}
   </div>
+
+  {% if recipes_df %}
+  {{recipes_df|safe}}
+  {% else %}
+  <h3> no data</h3>
+  {% endif %}
+
+
+  <a href="{%url 'logout' %}" class="btn"> Logout </a>
 
 </body>
 
