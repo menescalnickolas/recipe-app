@@ -12,24 +12,24 @@
 <body>
 
 
+  <form method="get">
+    {{ form.as_p }}
+    <button type="submit">Search</button>
+  </form>
 
-  <div class="search_form">
-    <form action="" method="GET">  {# Use GET so the search persists in the URL #}
-      {% csrf_token %}
-  
-      <label for="id_recipe_name">Recipe Name:</label>
-      {{ form.recipe_name }}
-  
-      <label for="id_chart_type">Chart Type:</label>
-      {{ form.chart_type }}
-  
-      <button type="submit">Search</button>
-    </form>
+  <div>
+    {% if recipes_df %}
+    <h3>Recipe Search Results:</h3>
+    <div>{{ recipes_df|safe }}</div>
+    {% endif %}
+
+    {% if chart %}
+    <img src="data:image/png;base64,{{ chart }}" alt="Chart">
+    {% endif %}
   </div>
 
 
   <h1>RECIPES</h1>
-
 
 
   <div class="recipes-container">
@@ -42,12 +42,6 @@
     </div>
     {% endfor %}
   </div>
-
-  {% if recipes_df %}
-  {{recipes_df|safe}}
-  {% else %}
-  <h3> no data</h3>
-  {% endif %}
 
 
   <a href="{%url 'logout' %}" class="btn"> Logout </a>

@@ -17,6 +17,11 @@ class Recipes(models.Model):
   ingredients = models.TextField()
   preparation_method = models.TextField()
   pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
+  difficulty = models.CharField(
+    max_length=20,
+    choices=difficulty_choice,
+    default='Easy'
+    )
 
   def __str__(self):
     return str(self.name)
@@ -24,14 +29,16 @@ class Recipes(models.Model):
   def get_absolute_url(self):
     return reverse ('recipes:detail', kwargs={'pk': self.pk})
   
-  @property #Makes "difficulty" a computed attribute instead of storing it in the database. This means it updates dynamically.
-  def difficulty(self):
+  
+  def save (self, *args, **kwargs):
     num_ingredients = len(self.ingredients.split(",")) 
     if self.cooking_time < 10 and num_ingredients < 4:
-      return "Easy"
+      self.difficulty = "Easy"
     elif self.cooking_time < 10 and num_ingredients >= 4:
-      return "Medium"
+      self.difficulty = "Medium"
     elif self.cooking_time >= 10 and num_ingredients < 4:
-      return "Intermediate"
+      self.difficulty = "Intermediate"
     else:
-      return "Hard"
+      self.difficulty = "Hard"
+    
+    super().save(*args, **kwargs)  # Save the instance with the calculated difficulty

@@ -7,6 +7,6 @@ CHART__CHOICES = (
 )
 
 class RecipesSearchForm(forms.Form):
-  recipe_name = forms.CharField(max_length=120)
+  search_query = forms.CharField(required=False, label="Search recipes, ingredients, difficulty, cooking time...")
   chart_type = forms.ChoiceField(choices=CHART__CHOICES)
 
