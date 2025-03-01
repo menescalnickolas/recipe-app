@@ -23,8 +23,9 @@ class RecipesListView(LoginRequiredMixin, ListView):
     self.recipes_df = None  # Initialize empty data for template
     self.chart = None
 
-    self.chart = get_chart('#2', queryset)
+    chart_type = self.request.GET.get('chart_type', '#2')
     
+  
     if self.request.GET and self.form.is_valid():
       search_query = self.request.GET.get('search_query', '')
       chart_type = self.request.GET.get('chart_type', '')
@@ -63,8 +64,7 @@ class RecipesListView(LoginRequiredMixin, ListView):
                 difficulty__icontains=search_query
                 )
       
-      
-      
+      self.chart = get_chart(chart_type, queryset)
 
       if queryset.exists():
         self.recipes_df = pd.DataFrame(queryset.values()).to_html()
@@ -75,7 +75,13 @@ class RecipesListView(LoginRequiredMixin, ListView):
     context = super().get_context_data(**kwargs)
     context['form'] = self.form  # Ensure form is passed to the template
     context['recipes_df'] = self.recipes_df  # Include filtered results (if any)
-    context['chart'] = self.chart
+    
+
+    if self.chart is None:
+      self.chart = get_chart('#2', Recipes.objects.all())
+    
+    context['chart'] = self.chart  
+      
     return context
 
 class RecipeDetailView(LoginRequiredMixin, DetailView):
