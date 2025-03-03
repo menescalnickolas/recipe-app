@@ -1,33 +1,138 @@
     /* Global Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: Verdana, sans-serif;
       background-color: #f8f9fa;
       margin: 0;
       padding: 20px;
       text-align: center;
     }
 
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  
+}
+
+/* Left Side (Title) */
+.nav-left h1 {
+  font-size: 1.5rem;
+  color: black;
+  margin: 0;
+}
+
+
+/* Search Dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropbtn {
+  background-color: rgb(134, 155, 199);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 50px;
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+  width: 350px;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Styled Search Form */
+.dropdown-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Input Field */
+.dropdown-content input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.dropdown-content input:focus {
+  border-color: #0151a7;
+}
+
+/* Styled Submit Button */
+.dropdown-content button {
+  padding: 10px;
+  border: none;
+  background-color: #3684d7;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content button:hover {
+  background-color: #0151a7;
+}
+
+/* Right Side (Search & Logout) */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
     h1 {
       font-family: 'Verdana', Geneva, sans-serif;
-      font-size: 3rem;
+      font-size: 1.5rem;
       color: #000000;
       margin-bottom: 30px;
     }
 
     .btn {
-      position: fixed;
-      align-items: end;
-      border: red;
-      background-color: #f8f9fa;
+      padding: 10px 15px;
+      border: 2px solid red;
+      background-color: white;
       color: red;
+      font-size: 1rem;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     .recipes-container {
-      display: flex;
+      display:inline-flex;
       flex-wrap: wrap;
       justify-content: space-around;
       padding: 20px;
-      gap: 20px;
+      gap: 50px;
+      margin-top: 100px;
+    }
+
+    .object-name {
+      border: 1px;
+      border-color: #007bff;
     }
 
     a {
@@ -40,10 +145,6 @@
       text-decoration: underline;
     }
 
-    .search_form {
-      margin: 100px;
-      border: red;
-    }
 
     /* Image Styling */
     .recipe-img {
@@ -53,3 +154,27 @@
       border-radius: 8px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
+
+    /* Graph Container */
+.graph-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Graph Image */
+.graph-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #f8f9fa;
+}

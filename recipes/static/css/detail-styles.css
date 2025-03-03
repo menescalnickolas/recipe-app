@@ -1,94 +1,128 @@
-/* General body styles */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: Verdana, sans-serif;
   background-color: #f8f9fa;
+  margin: 0;
+  padding: 60px;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   min-height: 100vh;
 }
 
-/* Recipe details page container */
-.recipe-details-container {
+/* Navigation Bar */
+.navbar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  padding: 20px;
-  max-width: 1500px;
-  margin: 0 auto;
-  flex-grow: 1;
-  position: relative;
-}
-
-/* Title styles */
-.recipe-title {
-  font-size: 3rem;
-  font-family: 'Verdana', Geneva, sans-serif;
-  color: #007bff;
-  ;
-}
-
-/* Subtitle (cooking time and difficulty) styles */
-.recipe-subtitle {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-/* Recipe image styles */
-.recipe-image {
-  width: auto;
-  height: 400px;
-  border-radius: 10px;
-}
-
-/* Section title styles (e.g., Description, Ingredients) */
-.section-title {
-  font-size: 1.1rem;
-  color: #444;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  text-align: left;
-  width: 100%;
-  padding-left: 20px;
-}
-
-/* Paragraphs for description, ingredients, and preparation */
-.recipe-description,
-.recipe-ingredients,
-.recipe-preparation {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin-bottom: 20px;
-  padding: 0 10px;
-  max-width: 900px;
-  text-align: left;
-  word-wrap: break-word;
-}
-
-/* Link button for navigation */
-.back-button {
-  display: inline-block;
+  background-color: #f8f9fa;
   padding: 10px 20px;
+  width: 95%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+/* Recipe Container - Profile Style */
+.recipe-details-container {
+  margin-top:60px;
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  width: 60%;
+  max-width: 900px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Title */
+.recipe-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Recipe Image - Profile Style */
+.recipe-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #ddd;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+/* Stats (Cooking Time & Difficulty) */
+.recipe-stats {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.recipe-stats span {
+  background-color: #ff7f50;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+/* Sections - Profile Post Style */
+.recipe-section {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin: 15px 0;
+  text-align: left;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Social Buttons */
+.recipe-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.action-btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.like-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.comment-btn {
   background-color: #007bff;
   color: white;
+}
+
+.action-btn:hover {
+  opacity: 0.8;
+}
+
+.btn {
+  padding: 10px 15px;
+  border: 2px solid red;
+  background-color: white;
+  color: red;
+  font-size: 1rem;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.2rem;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.back-button:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-.back-button:active {
-  background-color: #004085;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }

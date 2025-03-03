@@ -1,0 +1,119 @@
+/* Global styles */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* About Me Page Container */
+.about-container {
+  width: 80%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styles */
+.about-title {
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Subtitle styles */
+.about-subtitle {
+  font-size: 1.3rem;
+  color: #777;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* About content section */
+.about-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+/* About content heading */
+.about-content h2 {
+  font-size: 1.8rem;
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+  text-decoration: underline;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #bbb;
+}
+
+/* Contact section */
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: #0675b5;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #004d80;
+}
+
+/* Image */
+.about-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  object-fit: cover;
+  margin-right: 30px;
+  position: absolute;
+}
+
+/* Flexbox for layout */
+.about-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.about-layout .text {
+  flex: 1;
+}
+
+.about-layout .image {
+  flex: 0 0 180px;
+  text-align: center;
+}
+
+.button {
+  padding: 12px;
+  font-size: 18px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}

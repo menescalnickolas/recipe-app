@@ -6,26 +6,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Recipes - List</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main-styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/main-styles.css' %}">
 </head>
 
 <body>
 
 
-  <form method="get">
-    {{ form.as_p }}
-    <button type="submit">Search</button>
-  </form>
 
-  <div>
-    {% if recipes_df %}
-    <h3>Recipe Search Results:</h3>
-    <div>{{ recipes_df|safe }}</div>
-    {% endif %}
-  </div>
+  <nav class="navbar">
+    <div class="nav-left">
+      <h1>
+        <a href="/list">reciPIE</a>
+      </h1>
+    </div>
+    <div class="nav-right">
+      <div class="dropdown">
+        <button class="dropbtn">🔍 Search</button>
+        <div class="dropdown-content">
+          <form method="get">
+            {{ form.as_p }}
+            <button type="submit">Go</button>
+          </form>
+        </div>
+      </div>
+  
+      <a href="{% url 'logout' %}" class="btn">Logout</a>
+    </div>
+  </nav>
 
-
-  <h1>RECIPES</h1>
 
 
   <div class="recipes-container">
@@ -33,18 +41,25 @@
     <div class="recipe-item">
       <a href="{{ object.get_absolute_url }}">
         <img src="{{ object.pic.url }}" alt="{{ object.name }}" class="recipe-img">
-        <p>{{ object.name }}</p>
+        <p class="object-name">{{ object.name }}</p>
       </a>
     </div>
     {% endfor %}
   </div>
 
   {% if chart %}
+  <div>
+    <div class="graph-container">
     <img src="data:image/png;base64,{{ chart|safe }}" alt="Chart">
-    {% endif %}
+  </div>
+  </div>
+  
+{% endif %}
 
 
-  <a href="{%url 'logout' %}" class="btn"> Logout </a>
+<footer>
+  <a href="{% url 'about' %}">ABOUT THE DEVELOPER</a>
+</footer>
 
 </body>
 

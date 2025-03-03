@@ -8,29 +8,43 @@
   <link rel="stylesheet" href="{% static 'css/detail-styles.css' %}">
 </head>
 <body>
-  <a href ="{%url 'logout' %}"> Logout </a>
+  <nav class="navbar">
+    <div class="nav-left">
+      <h1>
+        <a href="/list">reciPIE</a>
+      </h1>
+    </div>
+    <div class="nav-right">
+      <a href="{% url 'logout' %}" class="btn">Logout</a>
+    </div>
+  </nav>
 
   <div class="recipe-details-container">
     <h1 class="recipe-title">{{ object.name }}</h1>
-
-    <h3 class="section-title">Recipe's Description</h3>
-    <p class="recipe-description">{{ object.description }}</p>
     
     <img class="recipe-image" src="{{ object.pic.url }}" alt="{{ object.name }} image">
-
-    <p class="recipe-subtitle">{{ object.cooking_time }} minutes | Level: {{ object.difficulty }}</p>
-
-    
-
-    <h3 class="section-title">Ingredients List</h3>
-    <p class="recipe-ingredients">{{ object.ingredients }}</p>
-
-    <h3 class="section-title">Preparation Method</h3>
-    <p class="recipe-preparation">{{ object.preparation_method }}</p>
-    
+  
+    <div class="recipe-stats">
+      <span>{{ object.cooking_time }} min</span>
+      <span>Level: {{ object.difficulty }}</span>
+    </div>
+  
+    <div class="recipe-section">
+      <h3 class="section-title">Description</h3>
+      <p>{{ object.description }}</p>
+    </div>
+  
+    <div class="recipe-section">
+      <h3 class="section-title">Ingredients</h3>
+      <p>{{ object.ingredients }}</p>
+    </div>
+  
+    <div class="recipe-section">
+      <h3 class="section-title">Preparation</h3>
+      <p>{{ object.preparation_method }}</p>
+    </div>
+  
   </div>
-
-  <a class="back-button" href="{% url 'recipes:list' %}">Back to Recipe List</a>
 
 </body>
 </html>

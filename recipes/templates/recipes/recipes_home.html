@@ -9,15 +9,16 @@
   <link rel="stylesheet" href="{% static 'css/home-styles.css' %}">
 </head>
 <body>
-    <h1 style="text-align:center; font-family: Verdana, Geneva, Tahoma, sans-serif;">RECIPES APP</h1>
+  <div class="home-container">
+    <h1>RECIPES APP</h1>
 
     <div class="image-container">
       <img src="{% static 'recipes/images/asnim-ansari-SqYmTDQYMjo-unsplash.jpg' %}" alt="home" class="home-image">
     </div>
   
-  <div class="button-container">
-    <a href="{% url 'login' %}" class="btn">Login to See All Recipes</a>
+    <div class="button-container">
+      <a href="{% url 'login' %}" class="btn">Login to See All Recipes</a>
+    </div>
   </div>
-  
 </body>
 </html>
