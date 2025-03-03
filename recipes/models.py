@@ -10,7 +10,7 @@ difficulty_choice = (
 )
 
 class Recipes(models.Model):
-  recipe_id = models.PositiveIntegerField()
+  recipe_id = models.AutoField(primary_key=True)
   name = models.CharField(max_length=50)
   description = models.TextField()
   cooking_time = models.PositiveIntegerField(help_text='in minutes')

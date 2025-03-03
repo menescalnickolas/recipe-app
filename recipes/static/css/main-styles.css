@@ -1,12 +1,11 @@
-    /* Global Styles */
-    body {
-      font-family: Verdana, sans-serif;
-      background-color: #f8f9fa;
-      margin: 0;
-      padding: 20px;
-      text-align: center;
-    }
-
+/* Global Styles */
+body {
+  font-family: Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
 
 /* Navigation Bar */
 .navbar {
@@ -15,7 +14,6 @@
   align-items: center;
   background-color: #f8f9fa;
   padding: 10px 20px;
-  
 }
 
 /* Left Side (Title) */
@@ -25,8 +23,7 @@
   margin: 0;
 }
 
-
-/* Search Dropdown */
+/* Dropdown Menu */
 .dropdown {
   position: relative;
 }
@@ -39,18 +36,20 @@
   cursor: pointer;
   border-radius: 5px;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
   top: 40px;
-  right: 50px;
+  right: 0;
   background-color: white;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 8px;
   width: 350px;
+  z-index: 1;
 }
 
 /* Show dropdown on hover */
@@ -96,6 +95,21 @@
   background-color: #0151a7;
 }
 
+/* Links inside dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
 /* Right Side (Search & Logout) */
 .nav-right {
   display: flex;
@@ -103,59 +117,58 @@
   gap: 15px;
 }
 
-    h1 {
-      font-family: 'Verdana', Geneva, sans-serif;
-      font-size: 1.5rem;
-      color: #000000;
-      margin-bottom: 30px;
-    }
+h1 {
+  font-family: 'Verdana', Geneva, sans-serif;
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 30px;
+}
 
-    .btn {
-      padding: 10px 15px;
-      border: 2px solid red;
-      background-color: white;
-      color: red;
-      font-size: 1rem;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+.btn {
+  padding: 10px 15px;
+  border: 2px solid red;
+  background-color: white;
+  color: red;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    .recipes-container {
-      display:inline-flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding: 20px;
-      gap: 50px;
-      margin-top: 100px;
-    }
+.recipes-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  gap: 50px;
+  margin-top: 100px;
+}
 
-    .object-name {
-      border: 1px;
-      border-color: #007bff;
-    }
+.object-name {
+  border: 1px;
+  border-color: #007bff;
+}
 
-    a {
-      text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
-    }
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
+/* Image Styling */
+.recipe-img {
+  width: 200px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-    /* Image Styling */
-    .recipe-img {
-      width: 200px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 8px;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Graph Container */
+/* Graph Container */
 .graph-container {
   display: flex;
   justify-content: center;

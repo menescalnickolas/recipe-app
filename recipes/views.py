@@ -34,11 +34,11 @@ class RecipesListView(LoginRequiredMixin, ListView):
       print(search_query, chart_type)
 
       print('Exploring querysets:')
-      print ('Case 1: Output of Sale.objects.all()')
+      print ('Case 1: Output of Recipes.objects.all()')
       qs = Recipes.objects.all()
       print(qs)
 
-      print('Case 2: Output of Sale.objects.filter(book_name=book_title)')
+      print('Case 2: Output of Recipes.objects.filter(book_name=book_title)')
       qs = Recipes.objects.filter(name__icontains=search_query)
       if qs:
         recipes_df=pd.DataFrame(qs.values())
@@ -50,8 +50,8 @@ class RecipesListView(LoginRequiredMixin, ListView):
       print('Case 3: Output of qs.values')
       print(qs.values_list())
 
-      print('Case 5: Output of Sale.objects.get(id=1)')
-      obj = Recipes.objects.get(id=1)
+      print('Case 5: Output of Recipes.objects.get(id=1)')
+      obj = Recipes.objects.get(recipe_id=1)
       print(obj)
 
       if search_query:

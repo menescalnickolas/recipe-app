@@ -13,24 +13,29 @@
 
 
 
+  <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="nav-left">
       <h1>
         <a href="/list">reciPIE</a>
       </h1>
     </div>
+    
     <div class="nav-right">
       <div class="dropdown">
-        <button class="dropbtn">🔍 Search</button>
+        <button class="dropbtn">☰ Menu</button>
         <div class="dropdown-content">
+          <!-- Search form inside dropdown -->
           <form method="get">
             {{ form.as_p }}
-            <button type="submit">Go</button>
+            <button type="submit">Search</button>
           </form>
+          <!-- Links to other pages inside dropdown -->
+          <a href="/add" class="btn">Add Recipes</a>
+          <a href="{% url 'about' %}" class="btn">About</a>
+          <a href="{% url 'logout' %}" class="btn">Logout</a>
         </div>
       </div>
-  
-      <a href="{% url 'logout' %}" class="btn">Logout</a>
     </div>
   </nav>
 
@@ -58,7 +63,7 @@
 
 
 <footer>
-  <a href="{% url 'about' %}">ABOUT THE DEVELOPER</a>
+  <a href="{% url 'logout' %}">ABOUT </a>
 </footer>
 
 </body>
