@@ -17,8 +17,19 @@ import dj_database_url
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import cloudinary.config
+import environ
+
+env = environ.Env()
+environ.Env.read_env() 
 
 load_dotenv()
+
+cloudinary.config(
+  cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
+  api_key=os.getenv('CLOUDINARY_API_KEY'),
+  api_secret=os.getenv('CLOUDINARY_API_SECRET')
+)
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -157,8 +168,6 @@ DATABASES['default'].update(db_from_env)
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': '655346583748275',
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
