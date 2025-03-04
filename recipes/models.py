@@ -1,5 +1,6 @@
 from django.db import models
 from django.shortcuts import reverse
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 difficulty_choice = (
@@ -16,7 +17,7 @@ class Recipes(models.Model):
   cooking_time = models.PositiveIntegerField(help_text='in minutes')
   ingredients = models.TextField()
   preparation_method = models.TextField()
-  pic = models.ImageField(upload_to='recipes', default='no_picture.jpg')
+  pic = CloudinaryField('image')
   difficulty = models.CharField(
     max_length=20,
     choices=difficulty_choice,
