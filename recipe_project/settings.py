@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-fu2q_zvo*os9(v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ancient-dawn-69025-90e0c7391a2a.herokuapp.com']
+ALLOWED_HOSTS = ['ancient-dawn-69025-90e0c7391a2a.herokuapp.com/']
 
 
 # Application definition
@@ -127,7 +127,7 @@ STATICFILES_DIRS=[
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, "media")
+MEDIA_ROOT= BASE_DIR / 'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
