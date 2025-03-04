@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1:8000', 'ancient-dawn-69025-90e0c7391a2a.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'ancient-dawn-69025-90e0c7391a2a.herokuapp.com']
 
 
 # Application definition
