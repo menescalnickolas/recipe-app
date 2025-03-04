@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Recipes-related apps
     'recipes',
+    'storages'
 ]
 
 MIDDLEWARE = [
@@ -126,7 +130,9 @@ STATICFILES_DIRS=[
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.cloudinary.CloudinaryStorage'
+MEDIA_URL = 'https://res.cloudinary.com/da0nalt2c/'
+
 MEDIA_ROOT= BASE_DIR / 'media'
 
 # Default primary key field type
@@ -141,3 +147,10 @@ LOGIN_URL='/login/'
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
+
+
+cloudinary.config(
+    cloud_name="da0nalt2c", 
+    api_key="655346583748275", 
+    api_secret="65xI4U5XLhkFQ-I7Ak5hfoAlloY"
+)
