@@ -157,7 +157,7 @@ DATABASES['default'].update(db_from_env)
 
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_KEY': '655346583748275',
     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 }
 
