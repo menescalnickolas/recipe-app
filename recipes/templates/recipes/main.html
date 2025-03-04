@@ -31,9 +31,12 @@
             <button type="submit">Search</button>
           </form>
           <!-- Links to other pages inside dropdown -->
-          <a href="/add" class="btn">Add Recipes</a>
+           <div class="menu-buttons">
+            <a href="/add" class="btn-add">Add Recipes</a>
           <a href="{% url 'about' %}" class="btn">About</a>
-          <a href="{% url 'logout' %}" class="btn">Logout</a>
+          <a href="{% url 'logout' %}" class="btn-logout" style="color: red;">Logout</a>
+           </div>
+          
         </div>
       </div>
     </div>
@@ -60,11 +63,6 @@
   </div>
   
 {% endif %}
-
-
-<footer>
-  <a href="{% url 'logout' %}">ABOUT </a>
-</footer>
 
 </body>
 
