@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     #Recipes-related apps
     'recipes',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 MIDDLEWARE = [
